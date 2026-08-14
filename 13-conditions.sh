@@ -13,3 +13,11 @@ elif [ $NUMBER -eq 20 ]; then
 else
     echo "Given number: $NUMBER is less than 20"
 fi
+
+if [[ $NUMBER -gt 10  ]]; then
+    echo "Given number: $NUMBER is greater than 20"
+elif [[ $NUMBER -eq 10 ]]; then
+    echo "Given number: $NUMBER is equal to 20"
+else
+    echo "Given number: $NUMBER is less than 20"
+fi
