@@ -4,4 +4,4 @@ echo "Enter your username"
 read user
 echo "Enter your password"
 read -s password
-echo "Username is $user, Password is $password"
+echo "Username is $user, Password is $password" # password gets printed but we should not print 
