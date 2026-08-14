@@ -19,6 +19,7 @@ echo "Division: $div_result" # Outputs: 3 (not 3.33)
 remainder=$((num1 % num2))
 echo "Remainder: $remainder" # Outputs: 1
 
+sleep 10
 ENDTIME=$(date +%s)
 #TOTALTIME=$ENDTIME-$STARTTIME
 TOTALTIME=$((ENDTIME-STARTTIME))
