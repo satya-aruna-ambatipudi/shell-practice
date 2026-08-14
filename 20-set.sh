@@ -31,8 +31,7 @@ do
     # exits when a package is not installed and throws error when set -e. Not the required behavior
     #dnf list installed $package &>>$LOGS_FILE  
     #if [ $? -ne 0 ]; then
-    dnf list installed $package || true &>>$LOGS_FILE  
-    if dnf list installed $package; then
+    if dnf list installed $package  &>>$LOGS_FILE; then
         echo "$package not installed, installing now"
         dnf install $package -y &>>$LOGS_FILE
         #VALIDATE $? "$package installation"
