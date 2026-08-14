@@ -32,10 +32,11 @@ do
     #dnf list installed $package &>>$LOGS_FILE  
     #if [ $? -ne 0 ]; then
     if dnf list installed $package  &>>$LOGS_FILE; then
+        echo -e "$package already installed ... $Y SKIPPING $N"
+    else
         echo "$package not installed, installing now"
         dnf install $package -y &>>$LOGS_FILE
         #VALIDATE $? "$package installation"
-    else
-        echo -e "$package already installed ... $Y SKIPPING $N"
+    
     fi
 done
