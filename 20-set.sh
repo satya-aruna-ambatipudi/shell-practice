@@ -32,7 +32,7 @@ do
     #dnf list installed $package &>>$LOGS_FILE  
     #if [ $? -ne 0 ]; then
     dnf list installed $package || true &>>$LOGS_FILE  
-    if [ $? -ne 0 ]; then
+    if dnf list installed $package; then
         echo "$package not installed, installing now"
         dnf install $package -y &>>$LOGS_FILE
         #VALIDATE $? "$package installation"
