@@ -4,7 +4,7 @@ USERID=$(id -u)
 LOGS_FOLDER="/var/log/shell-script"
 LOGS_FILE="$LOGS_FOLDER/$0.log"
 
-
+echo "Log file : $LOGS_FILE"
 # tee command shows output both on the screen and redirects to log file; -a to append
 if [ $USERID -ne 0 ]; then
     echo "Please run this script with root user access" | tee -a $LOGS_FILE
