@@ -28,7 +28,10 @@ VALIDATE(){
 
 for package in $@ # sudo sh 14-loops.sh nginx mysql nodejs
 do
-    dnf list installed $package &>>$LOGS_FILE
+    # exits when a package is not installed and throws error when set -e. Not the required behavior
+    #dnf list installed $package &>>$LOGS_FILE  
+    #if [ $? -ne 0 ]; then
+    dnf list installed $package || true &>>$LOGS_FILE  
     if [ $? -ne 0 ]; then
         echo "$package not installed, installing now"
         dnf install $package -y &>>$LOGS_FILE
