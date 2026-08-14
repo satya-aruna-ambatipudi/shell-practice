@@ -36,7 +36,7 @@ do
     else
         echo "$package not installed, installing now"
         dnf install $package -y &>>$LOGS_FILE
-        #VALIDATE $? "$package installation"
+        VALIDATE $? "$package installation"
     
     fi
 done
